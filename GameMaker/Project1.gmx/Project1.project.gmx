@@ -37,12 +37,15 @@
       </sprites>
     </sprites>
     <sprite>sprites\spr_highclass_pal</sprite>
+    <sprite>sprites\chansey</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <backgrounds name="DS-Dialogue-System">
       <background>background\bg_mainbg</background>
     </backgrounds>
+    <background>background\background2</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -109,6 +112,8 @@
       </scripts>
     </scripts>
     <script>scripts\explode.gml</script>
+    <script>scripts\scr_paul_text.gml</script>
+    <script>scripts\scr_create_text.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font1</font>
@@ -173,10 +178,15 @@
       <object>objects\Slam_Text</object>
       <object>objects\obj_text_effect</object>
     </objects>
+    <object>objects\Test_Butt</object>
+    <object>objects\obj_display_text_box</object>
+    <object>objects\obj_display_text</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room2</room>
+    <room>rooms\room4</room>
+    <room>rooms\test</room>
     <room>rooms\Sidharth_s_Office</room>
+    <room>rooms\room2</room>
     <rooms name="DS-Dialogue-System">
       <room>rooms\room_testroom</room>
     </rooms>
