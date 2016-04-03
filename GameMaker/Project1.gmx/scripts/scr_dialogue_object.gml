@@ -48,7 +48,10 @@ with dialogue
     spd = data.spd;
     time = data.time;
     font = data.font;
+    alteration_string = data.alteration_string;
     font_size = data.font_size;
+    //new_spd = data.new_spd;
+    //new_font_size = data.new_font_size;
 }
 
 //Check for actor at location.

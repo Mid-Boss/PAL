@@ -32,7 +32,6 @@ tree = instance_create(x, y, obj_tree);
 tree.ctr = self.id;
 branch = noone;
 
-
 scr_dialogue_behavior(false, false, false);
 </string>
           </argument>

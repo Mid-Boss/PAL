@@ -30,6 +30,9 @@
 //Parent Inheritance
 event_inherited();
 
+//Setup alterations (Speed, Size, Color ID)
+alteration_string = "0.3, 100, 1";
+
 //Branch(0)
 scr_set_branch(0);
 
@@ -38,10 +41,10 @@ scr_dialogue(1, RIGHT, obj_sidharth, noone, "The door is unlocked!");
 //Branch (1)
 scr_set_branch(1);
 scr_dialogue(noone, LEFT, obj_highclass_pal, noone, "Please excuse the intrusion.");
-scr_dialogue(noone, RIGHT, obj_sidharth, noone, "No PALs allowed in the office. Didn't you see the sign on my door?");
+scr_dialogue(noone, RIGHT, obj_sidharth, noone, "/s/tNo /cPALs allowed\ in the office. /sDidn't you see the\ sign on my door?", alteration_string);
 scr_dialogue(noone, LEFT, obj_highclass_pal, noone, "My good sir! That is a pollywaggle thing to demand! I say! I have never been so insulted in my life!");
 scr_choice("Sup?", noone, scr_find_branch(2));
-scr_choice("Go away", noone, scr_find_branch(3));
+scr_choice("Go away", 1, scr_find_branch(3));
 scr_choice("Come in for tea!", noone, scr_find_branch(4));
 
 //Branch (2)
@@ -87,6 +90,11 @@ scr_dialogue_start(tree);
           <argument>
             <kind>1</kind>
             <string>///Choosen Choices
+
+if choice.c_id = 1
+{
+    instance_create(0,0,Slam_Text);
+}
 </string>
           </argument>
         </arguments>
@@ -145,7 +153,7 @@ if tree.branch = scr_find_branch(0)
 }
 else
 {
-scr_branch_change(scr_find_branch(1,3), true);
+    scr_branch_change(scr_find_branch(1,3), true);
 }
 
 

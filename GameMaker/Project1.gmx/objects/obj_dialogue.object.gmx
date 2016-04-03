@@ -34,6 +34,13 @@ alarm[0] = 1;
 count = 0;
 print = "";
 text = "";
+norepeat_start = false;
+norepeat_end = false;
+revert_alteration[] = 0;
+c1 = c_white;
+c2 = c_white;
+c3 = c_white; 
+c4 = c_white;
 </string>
           </argument>
         </arguments>
@@ -88,7 +95,7 @@ if sound != noone
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -99,11 +106,100 @@ if sound != noone
 //Checks for pause.
 if global.pause exit;
 
+//Setup alterations if they exist
+alteration_array = explode(",", alteration_string);
+
+for(var i = 0; i &lt; array_length_1d(alteration_array); i++)
+{
+    alteration_array[i] = real(alteration_array[i]);
+}
+
+if norepeat_start = false
+{
+    def_spd = spd;
+    def_font_size = font_size;
+    def_color1 = c1;
+    def_color2 = c2;
+    def_color3 = c3;
+    def_color4 = c4;
+}
+
 //Add letters over time.
 if count &lt; text_length
 {
+    alteration_start = string_pos("/",text);
+    alteration_end = string_pos("\",text);
     count += spd;
-    print = string_copy(text, 0, count);
+    if (alteration_start &lt;= count &amp;&amp; alteration_start != 0)
+    {
+        norepeat_start = true;
+        text = string_delete(text, alteration_start, 1);
+        alteration = string_char_at(text, alteration_start);
+        if alteration != ""
+        {
+            text = string_delete(text, alteration_start, 1);
+            if alteration == "s"
+            {
+                if alteration_array[0] != 0
+                {
+                    spd  = alteration_array[0];
+                    revert_alteration[0] = 1;
+                }
+            }
+            if alteration == "t"
+            {
+                if alteration_array[1] != 0
+                {
+                    font_size = alteration_array[1];
+                    revert_alteration[1] = 1;
+                }
+            }
+            if alteration == "c"
+            {
+                switch alteration_array[2]
+                {
+                    case 1:
+                        c1 = c_blue;
+                        c2 = c_blue;
+                        c3 = c_navy;
+                        c4 = c_navy;
+                        break;                
+                    default:
+                        break;
+                }
+                revert_alteration[2] = 1;
+            }
+        }
+        
+    }
+    else if (alteration_end &lt;= count &amp;&amp; alteration_end != 0)
+    {
+        norepeat_end = true;
+        text = string_delete(text, alteration_end, 1);
+        if revert_alteration[0] == 1
+        {
+            spd = def_spd;
+            revert_alteration[0] = 0;
+        }
+        if revert_alteration[1] == 1
+        {
+            font_size = def_font_size;
+            revert_alteration[1] = 0;
+        }
+        if revert_alteration[2] == 1
+        {
+            c1 = def_color1;
+            c2 = def_color2;
+            c3 = def_color3;
+            c4 = def_color4;
+            revert_alteration[2] = 0;
+        }
+    }
+    else
+    {
+        print = string_copy(text, 0, count);
+    }
+    
 }
 </string>
           </argument>
@@ -132,8 +228,11 @@ if count &lt; text_length
 //Setups Drawing.
 draw_setup(c_white, font, fa_left, fa_top, false);
 
+//NEW AND FANCY
+draw_text_ext_colour(x, y, print, font_size * 2, maxlength, c1, c2, c3, c4, 1);
+
 //Draws Dialogue Text
-draw_text_ext(x, y, print, font_size * 2, maxlength);
+//draw_text_ext(x, y, print, font_size * 2, maxlength);
 
 //Setups Drawing.
 draw_setup(c_white, ft_arial_20_bold, fa_center, fa_top, false);

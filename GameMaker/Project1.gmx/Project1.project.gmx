@@ -5,10 +5,16 @@
   </Configs>
   <NewExtensions>
     <extension index="0">extensions\DSDialog</extension>
+    <extension index="1">extensions\TextEffect_ext_v1_2</extension>
   </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_glass_door_knock</sound>
     <sound>sound\snd_open_creaky_door</sound>
+    <sound>sound\snd_Sidharth1</sound>
+    <sound>sound\snd_Sidharth2</sound>
+    <sound>sound\snd_Sidharth3</sound>
+    <sound>sound\snd_Sidharth4</sound>
+    <sound>sound\snd_Sidharth5</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\Sidharth_Bust</sprite>
@@ -102,6 +108,7 @@
         </scripts>
       </scripts>
     </scripts>
+    <script>scripts\explode.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font1</font>
@@ -160,9 +167,15 @@
     </objects>
     <objects name="Dialog">
       <object>objects\ctr_opening_dialog</object>
+      <object>objects\object24</object>
+    </objects>
+    <objects name="Text-Effects">
+      <object>objects\Slam_Text</object>
+      <object>objects\obj_text_effect</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room2</room>
     <room>rooms\Sidharth_s_Office</room>
     <rooms name="DS-Dialogue-System">
       <room>rooms\room_testroom</room>
