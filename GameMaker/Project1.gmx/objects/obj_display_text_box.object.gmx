@@ -11,6 +11,49 @@
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>default_width = id.sprite_width;
+default_height = id.sprite_height;
+default_width_scale = 1;
+default_height_scale = 1;
+default_font = font1;
+default_c1 = c_white;
+default_c2 = c_white;
+default_c3 = c_white;
+default_c4 = c_white;
+default_alpha = 1;
+t_pad = 10;
+
+maxlength = default_width - (t_pad * 2);
+text_length = string_length(text);
+lines = ceil(text_length/maxlength);
+if !is_undefined(font) {font_size = font_get_size(font); draw_set_font(font); } 
+    else { font_size = font_get_size(default_font); draw_set_font(default_font); }
+line_buffer = font_size * 1.7;
+if is_undefined(color) {color = default_color; }
+
+id.image_yscale  = ((t_pad * 2) + (font_size + line_buffer) * lines)/default_height;
+
+//scr_paul_text(text, color, font, maxlength);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>500</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -39,7 +82,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_paul_text(text, color, font);
+            <string>draw_text_ext_colour(x+t_pad, y+t_pad, text, line_buffer, maxlength, 
+                    default_c1, default_c2, default_c3, default_c4, default_alpha);
 </string>
           </argument>
         </arguments>
