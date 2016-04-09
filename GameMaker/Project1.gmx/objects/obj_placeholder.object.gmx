@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>the_object = instance_create(x+sprite_get_width(self),y,obj_display_text_box);
+            <string>the_object = instance_create(x+id.sprite_width,y,obj_display_text_box);
 
 the_object.text = id.text;
 the_object.color = id.color;
