@@ -39,6 +39,30 @@ default_c4 = c_white;
 default_alpha = 1;
 t_pad = 10;
 
+destroy_timer = 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="50">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !destroy_timer  { instance_destroy(); instance_activate_all()}
 </string>
           </argument>
         </arguments>
@@ -69,7 +93,7 @@ if !is_undefined(font) {font_size = font_get_size(font); draw_set_font(font); }
 line_buffer = font_size * 1.7;
 if is_undefined(color) {color = default_color; }
 
-if !is_undefined(yscale) {id.image_yscale = yscale; }
+//if !is_undefined(yscale) {id.image_yscale = yscale; }
 </string>
           </argument>
         </arguments>
@@ -106,6 +130,10 @@ if !is_undefined(yscale) {id.image_yscale = yscale; }
             <kind>1</kind>
             <string>draw_text_ext_colour(x+t_pad, y+t_pad, text, line_buffer, maxlength, 
                     default_c1, default_c2, default_c3, default_c4, default_alpha);
+
+instance_deactivate_object(obj_placeholder);
+
+destroy_timer = destroy_timer - 1;
 </string>
           </argument>
         </arguments>
