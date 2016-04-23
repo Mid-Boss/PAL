@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,53 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create Objects in the room
-
-alarm[0] = 1;
-
-rifle = instance_create(100,200,obj_placeholder);
-rifle.sprite_index = chansey;
-
-bucket = instance_create(1000,800,obj_placeholder);
-bucket.sprite_index = chansey;
-  
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Store Objects with Text and Options
-
-with rifle
-{
-    text = "I love it when you click me...OOOOOOHHHH YEEEEEAAAAHHHH";
-    color = c_green;
-    font = font1;
-    arr_type = 1;
-}
-
-with bucket
-{
-    text = "Wtf?! Don't touch me!";
-    color = c_black;
-    font = font1;
-    arr_type = 2;
-}    
+            <string>alarm[0] = 1;
+var going_down = false;
+image_alpha = 0.7;
 </string>
           </argument>
         </arguments>
@@ -94,7 +50,48 @@ with bucket
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>if image_alpha == 0.7
+{
+    going_down = true;
+}
+else if image_alpha == 0.5
+{
+    going_down = false;
+}
+
+if going_down
+    image_alpha = image_alpha - 0.005;
+else
+    image_alpha = image_alpha + 0.005;
+
+alarm[0] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self();
+image_blend = c_red;
+    
+    
+
 </string>
           </argument>
         </arguments>

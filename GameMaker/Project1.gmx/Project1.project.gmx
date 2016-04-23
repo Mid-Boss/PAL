@@ -184,6 +184,7 @@
       <object>objects\obj_room1_storage</object>
       <object>objects\obj_placeholder</object>
       <object>objects\obj_display_text_box</object>
+      <object>objects\obj_placeholder_glow</object>
     </objects>
   </objects>
   <rooms name="rooms">
