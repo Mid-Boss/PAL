@@ -38,6 +38,7 @@
     </sprites>
     <sprite>sprites\spr_highclass_pal</sprite>
     <sprite>sprites\chansey</sprite>
+    <sprite>sprites\Arrow</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -185,6 +186,10 @@
       <object>objects\obj_placeholder</object>
       <object>objects\obj_display_text_box</object>
       <object>objects\obj_placeholder_glow</object>
+    </objects>
+    <objects name="Room Change Test">
+      <object>objects\obj_arrow_rm_chg</object>
+      <object>objects\obj_arrow_room_create</object>
     </objects>
   </objects>
   <rooms name="rooms">
