@@ -58,11 +58,14 @@ arrow_right = instance_create(1900,575,obj_arrow_rm_chg);
 with arrow_left
 {
     image_xscale = -1;
+    trans_text = "August 3, 10:00 AM #District Court #Courtroom No. 2";
+    dest = rm_crimescene_test;
 }
 
 with arrow_right
 {
-
+    trans_text = "September 20, 6:00 PM #Dreary City #Leah's Apartment";
+    dest = rm_crimescene_test;
 }    
 </string>
           </argument>

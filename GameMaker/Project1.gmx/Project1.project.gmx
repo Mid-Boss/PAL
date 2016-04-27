@@ -192,11 +192,13 @@
       <object>objects\obj_arrow_rm_chg</object>
       <object>objects\obj_arrow_room_create</object>
       <object>objects\obj_transition_text</object>
+      <object>objects\obj_global_vars</object>
+      <object>objects\obj_rm_move</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_transition</room>
     <room>rooms\rm_crimescene_test</room>
+    <room>rooms\rm_transition</room>
     <room>rooms\rm_Sidharth_s_Office</room>
     <rooms name="DS-Dialogue-System">
       <room>rooms\room_testroom</room>
