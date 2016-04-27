@@ -15,6 +15,7 @@
     <sound>sound\snd_Sidharth3</sound>
     <sound>sound\snd_Sidharth4</sound>
     <sound>sound\snd_Sidharth5</sound>
+    <sound>sound\snd_typing</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\Sidharth_Bust</sprite>
@@ -190,13 +191,13 @@
     <objects name="Room Change Test">
       <object>objects\obj_arrow_rm_chg</object>
       <object>objects\obj_arrow_room_create</object>
+      <object>objects\obj_transition_text</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room4</room>
-    <room>rooms\test</room>
-    <room>rooms\Sidharth_s_Office</room>
-    <room>rooms\room2</room>
+    <room>rooms\rm_transition</room>
+    <room>rooms\rm_crimescene_test</room>
+    <room>rooms\rm_Sidharth_s_Office</room>
     <rooms name="DS-Dialogue-System">
       <room>rooms\room_testroom</room>
     </rooms>
