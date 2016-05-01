@@ -29,9 +29,9 @@
 
 alarm[0] = 1;
 
-arrow_left = instance_create(100,575, obj_arrow_rm_chg);
+box_left = instance_create(75,525, obj_arrow_box);
 
-arrow_right = instance_create(1900,575,obj_arrow_rm_chg);
+box_right = instance_create(1925,525, obj_arrow_box);
   
 </string>
           </argument>
@@ -55,15 +55,17 @@ arrow_right = instance_create(1900,575,obj_arrow_rm_chg);
             <kind>1</kind>
             <string>///Store Objects with Text and Options
 
-with arrow_left
+with box_left
 {
-    image_xscale = -1;
+    not_flipped = -1;
     trans_text = "August 3, 10:00 AM #District Court #Courtroom No. 2";
     dest = rm_crimescene_test;
+    
 }
 
-with arrow_right
+with box_right
 {
+    not_flipped = 1;
     trans_text = "September 20, 6:00 PM #Dreary City #Leah's Apartment";
     dest = rm_crimescene_test;
 }    

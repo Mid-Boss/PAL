@@ -40,6 +40,7 @@
     <sprite>sprites\spr_highclass_pal</sprite>
     <sprite>sprites\chansey</sprite>
     <sprite>sprites\Arrow</sprite>
+    <sprite>sprites\spr_arrow_box</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -194,6 +195,7 @@
       <object>objects\obj_transition_text</object>
       <object>objects\obj_global_vars</object>
       <object>objects\obj_rm_move</object>
+      <object>objects\obj_arrow_box</object>
     </objects>
   </objects>
   <rooms name="rooms">
