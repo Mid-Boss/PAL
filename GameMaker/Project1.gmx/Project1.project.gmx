@@ -41,6 +41,12 @@
     <sprite>sprites\chansey</sprite>
     <sprite>sprites\Arrow</sprite>
     <sprite>sprites\spr_arrow_box</sprite>
+    <sprite>sprites\spr_menu_circle</sprite>
+    <sprite>sprites\spr_menu_data</sprite>
+    <sprite>sprites\spr_menu_profile</sprite>
+    <sprite>sprites\spr_menu_item</sprite>
+    <sprite>sprites\spr_menu_right_bound</sprite>
+    <sprite>sprites\spr_menu_bottom_bound</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -196,6 +202,15 @@
       <object>objects\obj_global_vars</object>
       <object>objects\obj_rm_move</object>
       <object>objects\obj_arrow_box</object>
+    </objects>
+    <objects name="Menu Test">
+      <object>objects\obj_menu_circle</object>
+      <object>objects\obj_menu_create</object>
+      <object>objects\obj_menu_data</object>
+      <object>objects\obj_menu_profile</object>
+      <object>objects\obj_menu_item</object>
+      <object>objects\obj_menu_right_bound</object>
+      <object>objects\obj_menu_bottom_bound</object>
     </objects>
   </objects>
   <rooms name="rooms">
