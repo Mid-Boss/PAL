@@ -41,12 +41,18 @@
     <sprite>sprites\chansey</sprite>
     <sprite>sprites\Arrow</sprite>
     <sprite>sprites\spr_arrow_box</sprite>
-    <sprite>sprites\spr_menu_circle</sprite>
-    <sprite>sprites\spr_menu_data</sprite>
-    <sprite>sprites\spr_menu_profile</sprite>
-    <sprite>sprites\spr_menu_item</sprite>
-    <sprite>sprites\spr_menu_right_bound</sprite>
-    <sprite>sprites\spr_menu_bottom_bound</sprite>
+    <sprites name="Menu Sprite">
+      <sprite>sprites\spr_menu_bottom_bound</sprite>
+      <sprite>sprites\spr_menu_right_bound</sprite>
+      <sprite>sprites\spr_menu_item</sprite>
+      <sprite>sprites\spr_arr_1</sprite>
+      <sprite>sprites\spr_arr_2</sprite>
+      <sprite>sprites\spr_arr_3</sprite>
+      <sprite>sprites\spr_arr_4</sprite>
+      <sprite>sprites\spr_menu_data</sprite>
+      <sprite>sprites\spr_menu_profile</sprite>
+      <sprite>sprites\spr_menu_circle</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -211,12 +217,23 @@
       <object>objects\obj_menu_item</object>
       <object>objects\obj_menu_right_bound</object>
       <object>objects\obj_menu_bottom_bound</object>
+      <object>objects\obj_move_menu_right</object>
+      <object>objects\obj_move_menu_down</object>
+      <object>objects\obj_retract_menu_left</object>
+      <object>objects\obj_retract_menu_up</object>
+      <object>objects\obj_arr_1</object>
+      <object>objects\obj_arr_2</object>
+      <object>objects\obj_arr_3</object>
+      <object>objects\obj_arr_4</object>
+    </objects>
+    <objects name="Room Pane Test">
+      <object>objects\obj_room_pane</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_crimescene_test</room>
-    <room>rooms\rm_transition</room>
     <room>rooms\rm_Sidharth_s_Office</room>
+    <room>rooms\rm_transition</room>
     <rooms name="DS-Dialogue-System">
       <room>rooms\room_testroom</room>
     </rooms>

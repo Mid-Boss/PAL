@@ -27,11 +27,19 @@
             <kind>1</kind>
             <string>///Create Objects in the room
 
-menu = instance_create(200, 200, obj_menu_circle);
+menu_x_pos = view_xview[0]+200;
+menu_y_pos = view_yview[0]+200;
 
-menu_profile = instance_create(250,200, obj_menu_profile);
-menu_data = instance_create(250,200, obj_menu_data);
-menu_items = instance_create(250,200, obj_menu_item);
+menu = instance_create(menu_x_pos, menu_y_pos, obj_menu_circle);
+
+menu_profile = instance_create(menu_x_pos+50, menu_y_pos, obj_menu_profile);
+menu_data = instance_create(menu_x_pos+50, menu_y_pos, obj_menu_data);
+menu_items = instance_create(menu_x_pos+50, menu_y_pos, obj_menu_item);
+
+menu_arr_1 = instance_create(menu_x_pos, menu_y_pos+100, obj_arr_1);
+menu_arr_2 = instance_create(menu_x_pos, menu_y_pos+100, obj_arr_2);
+menu_arr_3 = instance_create(menu_x_pos, menu_y_pos+100, obj_arr_3);
+menu_arr_4 = instance_create(menu_x_pos, menu_y_pos+100, obj_arr_4);
 </string>
           </argument>
         </arguments>
