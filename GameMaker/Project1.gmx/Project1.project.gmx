@@ -53,6 +53,25 @@
       <sprite>sprites\spr_menu_profile</sprite>
       <sprite>sprites\spr_menu_circle</sprite>
     </sprites>
+    <sprites name="ARR_Filter">
+      <sprite>sprites\spr_red_filter</sprite>
+      <sprite>sprites\spr_filter_edge</sprite>
+      <sprites name="Secret_letter">
+        <sprite>sprites\spr_letter_s</sprite>
+        <sprite>sprites\spr_letter_n</sprite>
+        <sprite>sprites\spr_letter_a</sprite>
+        <sprite>sprites\spr_letter_p</sprite>
+        <sprite>sprites\spr_letter_e</sprite>
+        <sprite>sprites\spr_letter_k</sprite>
+        <sprite>sprites\spr_letter_d</sprite>
+        <sprite>sprites\spr_letter_u</sprite>
+        <sprite>sprites\spr_letter_m</sprite>
+        <sprite>sprites\spr_letter_b</sprite>
+        <sprite>sprites\spr_letter_l</sprite>
+        <sprite>sprites\spr_letter_o</sprite>
+        <sprite>sprites\spr_letter_r</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -228,6 +247,12 @@
     </objects>
     <objects name="Room Pane Test">
       <object>objects\obj_room_pane</object>
+    </objects>
+    <objects name="ARR Filter Test">
+      <object>objects\obj_act_red_arr</object>
+      <object>objects\obj_red_filter</object>
+      <object>objects\obj_red_clue</object>
+      <object>objects\obj_create_red_clues</object>
     </objects>
   </objects>
   <rooms name="rooms">
