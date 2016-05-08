@@ -42,7 +42,7 @@ instance_destroy();
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_menu_bottom_bound</whoName>
+        <whoName>obj_menu_right_bound</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
