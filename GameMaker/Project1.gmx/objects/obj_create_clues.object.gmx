@@ -30,6 +30,17 @@ init_x = 700
 init_y = 200
 spr_offset = 150
 
+//*** The ARR Activators
+red_butt = instance_create(1000, 400, obj_act_red_arr);
+yell_butt = instance_create(1000, 400+red_butt.sprite_height, obj_act_yell_arr);
+
+//*** Yellow Clues
+yell_arrow = instance_create(110, 540, obj_yell_clue);
+yell_arrow.assigned_sprite = spr_yell_plant;
+yell_arrow.perform_effect = true;
+
+//*** Red Clues
+// Snape
 red_s = instance_create(init_x, init_y, obj_red_clue);
 red_s.assigned_sprite = spr_letter_s;
 red_s.perform_effect = true;
@@ -45,11 +56,10 @@ red_p.perform_effect = false;
 red_e = instance_create(init_x+4*spr_offset, init_y, obj_red_clue);
 red_e.assigned_sprite = spr_letter_e;
 red_e.perform_effect = false;
-
+// Kill
 red_kill = instance_create(init_x+2*spr_offset, init_y+300, obj_red_clue);
 red_kill.assigned_sprite = spr_letter_k;
 red_kill.perform_effect = false;
-
 // The Dore
 red_d = instance_create(init_x-4*spr_offset, init_y+600, obj_red_clue);
 red_d.assigned_sprite = spr_letter_d;

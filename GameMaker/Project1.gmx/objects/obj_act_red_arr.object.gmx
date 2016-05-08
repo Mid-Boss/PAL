@@ -52,16 +52,20 @@ filter_on = false;
             <kind>1</kind>
             <string>/// Create filter, remove filter
 
-if filter_on {
-    with (the_object) {
-        instance_destroy();
+if !instance_exists(obj_yell_filter) {
+    if filter_on {
+        with (the_object) {
+            instance_destroy();
+        }
+        filter_on = false;
+        image_blend = c_white;
     }
-    filter_on = false;
-}
-else {
-    the_object = instance_create(0,0,obj_red_filter);
-    the_object.filter_color = c_red;
-    filter_on = true;
+    else {
+        the_object = instance_create(0,0,obj_red_filter);
+        the_object.filter_color = c_red;
+        filter_on = true;
+        image_blend = c_ltgray;
+    }
 }
 </string>
           </argument>

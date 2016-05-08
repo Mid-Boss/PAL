@@ -39,7 +39,7 @@
     </sprites>
     <sprite>sprites\spr_highclass_pal</sprite>
     <sprite>sprites\chansey</sprite>
-    <sprite>sprites\Arrow</sprite>
+    <sprite>sprites\spr_Arrow</sprite>
     <sprite>sprites\spr_arrow_box</sprite>
     <sprites name="Menu Sprite">
       <sprite>sprites\spr_menu_bottom_bound</sprite>
@@ -55,7 +55,7 @@
     </sprites>
     <sprites name="ARR_Filter">
       <sprite>sprites\spr_red_filter</sprite>
-      <sprite>sprites\spr_filter_edge</sprite>
+      <sprite>sprites\spr_yellow_filter</sprite>
       <sprites name="Secret_letter">
         <sprite>sprites\spr_letter_s</sprite>
         <sprite>sprites\spr_letter_n</sprite>
@@ -70,6 +70,9 @@
         <sprite>sprites\spr_letter_l</sprite>
         <sprite>sprites\spr_letter_o</sprite>
         <sprite>sprites\spr_letter_r</sprite>
+      </sprites>
+      <sprites name="Yellow Clues">
+        <sprite>sprites\spr_yell_plant</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -213,6 +216,9 @@
       <object>objects\obj_text_effect</object>
     </objects>
     <object>objects\Test_Butt</object>
+    <objects name="globals">
+      <object>objects\obj_global_list</object>
+    </objects>
     <object>objects\obj_display_text</object>
     <objects name="Alex Room Object Test">
       <object>objects\obj_room1_storage</object>
@@ -250,9 +256,12 @@
     </objects>
     <objects name="ARR Filter Test">
       <object>objects\obj_act_red_arr</object>
+      <object>objects\obj_act_yell_arr</object>
       <object>objects\obj_red_filter</object>
+      <object>objects\obj_yell_filter</object>
       <object>objects\obj_red_clue</object>
-      <object>objects\obj_create_red_clues</object>
+      <object>objects\obj_yell_clue</object>
+      <object>objects\obj_create_clues</object>
     </objects>
   </objects>
   <rooms name="rooms">
