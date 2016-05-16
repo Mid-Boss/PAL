@@ -31,7 +31,7 @@ init_y = 200
 spr_offset = 150
 
 //*** Yellow Clues
-yell_arrow = instance_create(110, 540, obj_yell_clue);
+yell_arrow = instance_create(1000, 480, obj_yell_clue);
 yell_arrow.assigned_sprite = spr_yell_plant;
 yell_arrow.perform_effect = true;
 

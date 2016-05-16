@@ -162,6 +162,10 @@
     </fonts>
   </fonts>
   <objects name="objects">
+    <objects name="Rebbit Test">
+      <object>objects\obj_ribbit_note</object>
+      <object>objects\obj_rebbit_checker</object>
+    </objects>
     <object>objects\Dialog_Box_Object</object>
     <objects name="DS-Dialogue-System">
       <object>objects\README</object>
@@ -215,11 +219,10 @@
       <object>objects\Slam_Text</object>
       <object>objects\obj_text_effect</object>
     </objects>
-    <object>objects\Test_Butt</object>
     <objects name="globals">
       <object>objects\obj_global_list</object>
+      <object>objects\obj_global_game_status</object>
     </objects>
-    <object>objects\obj_display_text</object>
     <objects name="Alex Room Object Test">
       <object>objects\obj_room1_storage</object>
       <object>objects\obj_placeholder</object>
@@ -255,8 +258,6 @@
       <object>objects\obj_room_pane</object>
     </objects>
     <objects name="ARR Filter Test">
-      <object>objects\obj_act_red_arr</object>
-      <object>objects\obj_act_yell_arr</object>
       <object>objects\obj_red_filter</object>
       <object>objects\obj_yell_filter</object>
       <object>objects\obj_red_clue</object>

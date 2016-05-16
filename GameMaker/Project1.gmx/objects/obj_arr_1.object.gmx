@@ -87,6 +87,7 @@ if !instance_exists(obj_yell_filter) &amp;&amp; obj_menu_circle.retract_bottom_m
         obj_arr_2.image_blend = c_white;
         obj_arr_3.image_blend = c_white;
         obj_arr_4.image_blend = c_white;
+        instance_create(0,0,obj_retract_menu_up);
     }
     else {
         the_object = instance_create(0,0,obj_red_filter);
@@ -95,6 +96,7 @@ if !instance_exists(obj_yell_filter) &amp;&amp; obj_menu_circle.retract_bottom_m
         obj_arr_2.image_blend = c_ltgray;
         obj_arr_3.image_blend = c_ltgray;
         obj_arr_4.image_blend = c_ltgray;
+        instance_create(0,0,obj_retract_menu_up);
     }
 }
 </string>
