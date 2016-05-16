@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_x = view_xview[0];
+            <string>filter_on = false;
+view_x = view_xview[0];
 </string>
           </argument>
         </arguments>
@@ -52,6 +53,50 @@
 {
     x = view_xview[0]+200;
     view_x = view_xview[0];
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Create filter, remove filter
+
+if !instance_exists(obj_red_filter) &amp;&amp; obj_menu_circle.retract_bottom_menu {
+    if filter_on {
+        with (the_object) {
+            instance_destroy();
+        }
+        filter_on = false;
+        obj_arr_1.image_blend = c_white;
+        obj_arr_3.image_blend = c_white;
+        obj_arr_4.image_blend = c_white;
+    }
+    else {
+        the_object = instance_create(view_xview[0],0,obj_yell_filter);
+        the_object.filter_color = c_yellow;
+        filter_on = true;
+        obj_arr_1.image_blend = c_ltgray;
+        obj_arr_3.image_blend = c_ltgray;
+        obj_arr_4.image_blend = c_ltgray;
+        //global.can_pane = false;
+    }
 }
 </string>
           </argument>

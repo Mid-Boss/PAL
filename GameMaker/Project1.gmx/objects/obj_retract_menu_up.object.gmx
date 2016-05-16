@@ -28,6 +28,7 @@
             <string>stored_y = obj_arr_4.y;
 
 obj_menu_circle.retract_bottom_menu = false;
+global.can_pane = false;
 
 alarm[0] = 1;
 </string>
@@ -53,6 +54,7 @@ alarm[0] = 1;
           <argument>
             <kind>1</kind>
             <string>obj_menu_circle.can_create_bounds = true;
+global.can_pane = true;
 
 instance_destroy();
 </string>

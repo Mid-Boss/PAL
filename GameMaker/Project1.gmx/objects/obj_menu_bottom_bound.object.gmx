@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>instance_create(0,0,obj_move_menu_down);
 
+global.can_pane = false;
+
 instance_destroy();
 </string>
           </argument>

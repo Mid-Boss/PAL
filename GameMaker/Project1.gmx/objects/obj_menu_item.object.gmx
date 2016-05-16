@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_x = view_xview[0];
+            <string>temp = 0;
+view_x = view_xview[0];
 </string>
           </argument>
         </arguments>
@@ -50,9 +51,11 @@
             <kind>1</kind>
             <string>if global.can_pane &amp;&amp; view_x != view_xview[0]
 {
-    x = view_xview[0]+250;
-    view_x = view_xview[0];
-}
+    if obj_menu_circle.retract_right_menu
+        x = view_xview[0]+850;
+    else
+        x = view_xview[0]+250;
+}    
 </string>
           </argument>
         </arguments>
@@ -75,8 +78,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.can_pane &amp;&amp; view_x != view_xview[0]
-    draw_sprite(sprite_index,image_index,view_xview[0]+250,y);
+            <string>if global.can_pane &amp;&amp; view_x != view_xview[0] 
+{
+    if obj_menu_circle.retract_right_menu
+        draw_sprite(sprite_index,image_index,view_xview[0]+850,y);
+    else
+        draw_sprite(sprite_index,image_index,view_xview[0]+250,y);
+}
 else
     draw_self();
 </string>
