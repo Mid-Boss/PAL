@@ -278,6 +278,7 @@
     </objects>
     <objects name="Fire Room Test">
       <object>objects\obj_fire_room</object>
+      <object>objects\obj_battle_control</object>
     </objects>
     <objects name="Busts">
       <object>objects\obj_left_guy</object>

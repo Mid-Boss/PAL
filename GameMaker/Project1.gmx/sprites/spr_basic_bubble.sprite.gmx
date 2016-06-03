@@ -2,23 +2,23 @@
 <sprite>
   <type>0</type>
   <xorig>0</xorig>
-  <yorigin>0</yorigin>
-  <colkind>0</colkind>
+  <yorigin>1</yorigin>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>-1</sepmasks>
+  <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>5</bbox_left>
-  <bbox_right>368</bbox_right>
-  <bbox_top>4</bbox_top>
-  <bbox_bottom>196</bbox_bottom>
+  <bbox_left>0</bbox_left>
+  <bbox_right>361</bbox_right>
+  <bbox_top>2</bbox_top>
+  <bbox_bottom>194</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>375</width>
-  <height>200</height>
+  <width>362</width>
+  <height>196</height>
   <frames>
     <frame index="0">images\spr_basic_bubble_0.png</frame>
   </frames>

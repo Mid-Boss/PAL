@@ -30,6 +30,9 @@
 global.can_pane = true;
 global.transition_text = "";
 global.destination = "";
+
+// For Battle
+global.start_battle = 0;
 </string>
           </argument>
         </arguments>
