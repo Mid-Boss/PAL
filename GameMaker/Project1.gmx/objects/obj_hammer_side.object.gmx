@@ -28,8 +28,11 @@
             <string>/// Follow the box
 
 if speed == 0 {
-    y = left_box.y;
-    x = left_box.x + x_offset;
+    x = lengthdir_x(left_box.x + x_offset, left_box.image_angle);
+    y = lengthdir_y(left_box.y, left_box.image_angle);
+    //y = left_box.y;
+    //x = left_box.x + x_offset;
+    //image_angle = left_box.image_angle;
 }
 </string>
           </argument>

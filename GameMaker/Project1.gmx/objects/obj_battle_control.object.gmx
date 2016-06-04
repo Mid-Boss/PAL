@@ -83,7 +83,7 @@ if start_battle = 1 {
                 fight_step++;
                 break;
         // Make sides of hammers
-        case 5: if handle.speed==0 {
+        case 5: if handle.speed == 0 {
                     mallet_left = instance_create(left_box.x,
                         left_box.y, obj_hammer_side);
                     mallet_left.image_xscale = -1;
@@ -94,11 +94,14 @@ if start_battle = 1 {
                     mallet_right.x_offset = sprite_get_width(spr_basic_bubble);
                     mallet_right.left_box = left_box;
                     fight_step++;
-                }
+                }    
                 break;
-        case 6:
-                break;
-        case 7: with (left_box) move_towards_point(x + 100, y, 20);
+        case 6: if (mouse_check_button(mb_right))
+                    with (left_box) { 
+                        y += 2;
+                        x -= 2;
+                        image_angle = image_angle + 1;
+                    }
                 break;
         
     

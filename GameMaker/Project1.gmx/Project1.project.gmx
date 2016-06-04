@@ -278,7 +278,6 @@
     </objects>
     <objects name="Fire Room Test">
       <object>objects\obj_fire_room</object>
-      <object>objects\obj_battle_control</object>
     </objects>
     <objects name="Busts">
       <object>objects\obj_left_guy</object>
@@ -288,6 +287,9 @@
       <object>objects\obj_basic_bubble</object>
       <object>objects\obj_hammer_side</object>
       <object>objects\obj_hammer_handle</object>
+    </objects>
+    <objects name="Battle Test">
+      <object>objects\obj_battle_control</object>
     </objects>
   </objects>
   <rooms name="rooms">

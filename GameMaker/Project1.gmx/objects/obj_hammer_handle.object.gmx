@@ -33,6 +33,7 @@ if abs(end_y-y)&lt;10 {
 if speed == 0 
     y = left_box.y + sprite_get_height(spr_basic_bubble);
 x = left_box.x + sprite_get_width(spr_basic_bubble)/2;
+image_angle = left_box.image_angle;
 
 </string>
           </argument>
