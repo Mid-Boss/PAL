@@ -8,6 +8,29 @@
   <parentName>obj_basic_bubble</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>first_time = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -27,12 +50,22 @@
             <kind>1</kind>
             <string>/// Follow the box
 
+length_to_point = sqrt(sqr(rotate_y-y) + sqr(rotate_x-x));
+
 if speed == 0 {
-    x = lengthdir_x(left_box.x + x_offset, left_box.image_angle);
-    y = lengthdir_y(left_box.y, left_box.image_angle);
-    //y = left_box.y;
-    //x = left_box.x + x_offset;
-    //image_angle = left_box.image_angle;
+    if first_time {
+        x = rotate_x + x_offset;
+        y = rotate_y;
+        first_time = false;
+    }
+    else {
+        x = rotate_x + lengthdir_x(length_to_point, left_box.image_angle);
+        y = rotate_y + lengthdir_y(length_to_point, left_box.image_angle);
+        image_angle = left_box.image_angle;
+        //y = left_box.y;
+        //x = left_box.x + x_offset;
+        //image_angle = left_box.image_angle;
+    }
 }
 </string>
           </argument>

@@ -78,6 +78,8 @@ if start_battle = 1 {
                     775, obj_hammer_handle);
                 handle.end_y = left_box.y + sprite_get_height(spr_basic_bubble) - 30;
                 handle.left_box = left_box;
+                handle.rotate_x = 280;
+                handle.rotate_y = 480;
                 with (handle) move_towards_point(left_box.x + sprite_get_width(spr_basic_bubble)/2,
                     end_y, 15);
                 fight_step++;
@@ -89,17 +91,25 @@ if start_battle = 1 {
                     mallet_left.image_xscale = -1;
                     mallet_left.left_box = left_box;
                     mallet_left.x_offset = 0;
+                    mallet_left.rotate_x = 280;
+                    mallet_left.rotate_y = 480;
                     mallet_right = instance_create(left_box.x + sprite_get_width(spr_basic_bubble),
                         left_box.y, obj_hammer_side);
                     mallet_right.x_offset = sprite_get_width(spr_basic_bubble);
                     mallet_right.left_box = left_box;
+                    mallet_right.rotate_x = 280;
+                    mallet_right.rotate_y = 480;
                     fight_step++;
                 }    
                 break;
         case 6: if (mouse_check_button(mb_right))
                     with (left_box) { 
-                        y += 2;
-                        x -= 2;
+                        rotate_x = 280;
+                        rotate_y = 480;
+                        length_to_point = sqrt(sqr(rotate_y-y) + sqr(rotate_x-x));
+                        angle_between = point_direction(rotate_x,rotate_y,x,y)-360;
+                        x = rotate_x + lengthdir_x(length_to_point, angle_between);
+                        y = rotate_y + lengthdir_y(length_to_point, angle_between);
                         image_angle = image_angle + 1;
                     }
                 break;
