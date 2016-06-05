@@ -102,16 +102,27 @@ if start_battle = 1 {
                     fight_step++;
                 }    
                 break;
-        case 6: if (mouse_check_button(mb_right))
+        case 6: //if (mouse_check_button(mb_right)) {
                     with (left_box) { 
                         rotate_x = 280;
                         rotate_y = 480;
-                        length_to_point = sqrt(sqr(rotate_y-y) + sqr(rotate_x-x));
-                        angle_between = point_direction(rotate_x,rotate_y,x,y)-360;
-                        x = rotate_x + lengthdir_x(length_to_point, angle_between);
-                        y = rotate_y + lengthdir_y(length_to_point, angle_between);
-                        image_angle = image_angle + 1;
+                        direction = direction + 1;
+                        //length_to_point = sqrt(sqr(rotate_y-y) + sqr(rotate_x-x));
+                        length_to_point = point_distance(rotate_x,rotate_y,x,y);
+                        angle_to_point = point_direction(rotate_x,rotate_y,x,y);
+                        temp_x = ((x-rotate_x)*cos(degtorad(direction))) 
+                                    - ((y-rotate_y)*sin(degtorad(direction)));
+                        temp_y = ((y-rotate_y)*cos(degtorad(direction))) 
+                                    + ((x-rotate_x)*sin(degtorad(direction)));
+                        x = temp_x + rotate_x;
+                        y = temp_y + rotate_y;
+                       // x = rotate_x + lengthdir_x(length_to_point, 
+                        //    angle_to_point+image_angle);
+                        //y = rotate_y + lengthdir_y(length_to_point, 
+                        //    angle_to_point+image_angle);
+                        
                     }
+                //}
                 break;
         
     

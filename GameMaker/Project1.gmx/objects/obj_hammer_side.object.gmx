@@ -50,23 +50,25 @@
             <kind>1</kind>
             <string>/// Follow the box
 
-length_to_point = sqrt(sqr(rotate_y-y) + sqr(rotate_x-x));
+length_to_point = point_distance(rotate_x,rotate_y,x,y);
+angle_to_point = point_direction(rotate_x,rotate_y,x,y);
 
 if speed == 0 {
     if first_time {
-        x = rotate_x + x_offset;
-        y = rotate_y;
+        x = left_box.x + x_offset;
+        y = left_box.y;
         first_time = false;
     }
     else {
-        x = rotate_x + lengthdir_x(length_to_point, left_box.image_angle);
-        y = rotate_y + lengthdir_y(length_to_point, left_box.image_angle);
+        x = rotate_x + lengthdir_x(length_to_point, angle_to_point);
+        y = rotate_y + lengthdir_y(length_to_point, angle_to_point);
         image_angle = left_box.image_angle;
         //y = left_box.y;
         //x = left_box.x + x_offset;
         //image_angle = left_box.image_angle;
     }
 }
+
 </string>
           </argument>
         </arguments>
