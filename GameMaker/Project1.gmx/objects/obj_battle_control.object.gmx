@@ -32,6 +32,7 @@ fight_step = 0;
 left_text = "";
 right_text = "";
 padding = 7.24;
+reverse = false;
 </string>
           </argument>
         </arguments>
@@ -103,22 +104,35 @@ if start_battle = 1 {
                     fight_step++;
                 }    
                 break;
-        case 6: if (mouse_check_button(mb_right)) {
+        case 6: if (mouse_check_button(mb_right)) {           
+                    if left_box.image_angle &gt;= 30 {
+                        left_box.rotation_amount = 1;
+                        mallet_left.rotation_amount = 1;
+                        mallet_right.rotation_amount = 1;
+                        handle.rotation_amount = 1;
+                        reverse = true;
+                    }
+                    else {
+                        mallet_left.rotation_amount = -1;
+                        mallet_right.rotation_amount = -1;
+                        handle.rotation_amount = -1;
+                        left_box.rotation_amount = -1;
+                    }
+                    if reverse
+                        left_box.image_angle = left_box.image_angle - 1;
+                    else
+                        left_box.image_angle = left_box.image_angle + 1;
                     with (left_box) { 
                         rotate_x = 280;
                         rotate_y = 480;
-                        rotation_amount = -1;
-                        image_angle = image_angle + 1;
+                         
                         temp_x = ((x-rotate_x)*cos(degtorad(rotation_amount))) 
                                     - ((y-rotate_y)*sin(degtorad(rotation_amount)));
                         temp_y = ((y-rotate_y)*cos(degtorad(rotation_amount))) 
                                     + ((x-rotate_x)*sin(degtorad(rotation_amount)));
                         x = temp_x + rotate_x;
                         y = temp_y + rotate_y;  
-                    }
-                    mallet_left.rotation_amount = -1;
-                    mallet_right.rotation_amount = -1;
-                    handle.rotation_amount = -1;
+                    } 
                 }
                 else {
                     left_box.rotation_amount = 0;
@@ -126,10 +140,11 @@ if start_battle = 1 {
                     mallet_right.rotation_amount = 0;
                     handle.rotation_amount = 0;
                 }
-                break;
-        
-    
-    
+                break;  
+        case 7:
+            break; 
+        case 8:
+            break;
         default: fight_step = 0;
             start_battle = 0;
             right_text = "";
