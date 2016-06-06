@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>first_time = true;
+rotation_amount = 0;
 </string>
           </argument>
         </arguments>
@@ -54,23 +55,13 @@ if abs(end_y-y)&lt;10 {
     speed = 0;
 }
 
-length_to_point = point_distance(rotate_x,rotate_y,x,y);
-angle_to_point = point_direction(rotate_x,rotate_y,x,y);
-//angle_between = point_direction(rotate_x,rotate_y,x,y)-360;
-
 if speed == 0 {
-    //if first_time {
-   //     new_angle_between = angle_between;
-    //    first_time = false;
-   // }
-   // if image_angle != left_box.image_angle
-     //   new_angle_between = (90-angle_between) + left_box.image_angle;
-    //test = lengthdir_x(length_to_point, angle_between);
-    //test2 = lengthdir_y(length_to_point, angle_between);
-//    x = x*cos(left_box.image_angle) - y*sin(left_box.image_angle);
-//    y = x*sin(left_box.image_angle) + y*cos(left_box.image_angle);
-    x = rotate_x + lengthdir_x(length_to_point, angle_to_point);
-    y = rotate_y + lengthdir_y(length_to_point, angle_to_point);
+    temp_x = ((x-rotate_x)*cos(degtorad(rotation_amount))) 
+                - ((y-rotate_y)*sin(degtorad(rotation_amount)));
+    temp_y = ((y-rotate_y)*cos(degtorad(rotation_amount))) 
+                + ((x-rotate_x)*sin(degtorad(rotation_amount)));
+    x = temp_x + rotate_x;
+    y = temp_y + rotate_y;  
     image_angle = left_box.image_angle;
 }
 
