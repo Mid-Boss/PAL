@@ -86,6 +86,7 @@
       <sprite>sprites\spr_basic_bubble</sprite>
       <sprite>sprites\spr_hammer_side</sprite>
       <sprite>sprites\spr_hammer_handle</sprite>
+      <sprite>sprites\spr_hammer</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -287,6 +288,7 @@
       <object>objects\obj_basic_bubble</object>
       <object>objects\obj_hammer_side</object>
       <object>objects\obj_hammer_handle</object>
+      <object>objects\obj_hammer</object>
     </objects>
     <objects name="Battle Test">
       <object>objects\obj_battle_control</object>

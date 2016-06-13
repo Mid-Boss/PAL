@@ -52,20 +52,9 @@ rotation_amount = 0;
             <string>/// Follow the box
 
 if speed == 0 {
-    if first_time {
-        x = left_box.x + x_offset;
-        y = left_box.y;
-        first_time = false;
-    }
-    else {
-        temp_x = ((x-rotate_x)*cos(degtorad(rotation_amount))) 
-                    - ((y-rotate_y)*sin(degtorad(rotation_amount)));
-        temp_y = ((y-rotate_y)*cos(degtorad(rotation_amount))) 
-                    + ((x-rotate_x)*sin(degtorad(rotation_amount)));
-        x = temp_x + rotate_x;
-        y = temp_y + rotate_y;  
-        image_angle = left_box.image_angle;
-    }
+    x = left_box.x + x_offset;
+    y = left_box.y;
+    first_time = false;
 }
 
 </string>

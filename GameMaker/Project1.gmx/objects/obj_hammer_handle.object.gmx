@@ -55,15 +55,6 @@ if abs(end_y-y)&lt;10 {
     speed = 0;
 }
 
-if speed == 0 {
-    temp_x = ((x-rotate_x)*cos(degtorad(rotation_amount))) 
-                - ((y-rotate_y)*sin(degtorad(rotation_amount)));
-    temp_y = ((y-rotate_y)*cos(degtorad(rotation_amount))) 
-                + ((x-rotate_x)*sin(degtorad(rotation_amount)));
-    x = temp_x + rotate_x;
-    y = temp_y + rotate_y;  
-    image_angle = left_box.image_angle;
-}
 
 </string>
           </argument>
