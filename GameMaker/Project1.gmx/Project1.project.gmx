@@ -289,6 +289,8 @@
       <object>objects\obj_hammer_side</object>
       <object>objects\obj_hammer_handle</object>
       <object>objects\obj_hammer</object>
+      <object>objects\obj_right_text_location</object>
+      <object>objects\obj_left_text_location</object>
     </objects>
     <objects name="Battle Test">
       <object>objects\obj_battle_control</object>

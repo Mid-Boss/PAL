@@ -33,6 +33,8 @@ left_text = "";
 right_text = "";
 padding = 7.24;
 reverse = false;
+the_angle = 0;
+first_time = 1;
 </string>
           </argument>
         </arguments>
@@ -98,24 +100,65 @@ if start_battle = 1 {
                 }    
                 break;
         case 6:
-                hammer = instance_create(handle.x,handle.y+25,obj_hammer);
+                hammer = instance_create(handle.x,handle.y+20,obj_hammer);
                 instance_deactivate_object(left_box);
                 with (handle) instance_destroy();
                 with (mallet_left) instance_destroy();
                 with (mallet_right) instance_destroy();
                 fight_step++;       
                 break;  
-        case 7:
-                with(hammer) {
-                    rotate_x = 100;
-                    rotate_y = 500;
-                    angle_rate = -5;
-                    distance = point_distance(x, rotate_x, y, rotate_y);
-                    x = rotate_x + lengthdir_x(distance,angle_rate);
-                    y = rotate_y + lengthdir_y(distance,angle_rate);
+        case 7: if (mouse_check_button(mb_right)) {
+                    if (hammer.image_angle &gt; 30)
+                        fight_step++;
+                    else {
+                        hammer.image_angle = hammer.image_angle + 1;
+                        the_angle = hammer.image_angle;
+                        if first_time {
+                            angle = point_direction(hammer.x,left_text_start.x,hammer.y,left_text_start.y) + the_angle;
+                            true_angle = angle;
+                            first_time = 0;
+                        }
+                        else 
+                            true_angle = angle + the_angle;
+                        left_text_start.true_angle = true_angle;
+                        left_text_start.hammer = hammer;
+                        with (left_text_start) {    
+                            x = hammer.x + lengthdir_x(point_distance(hammer.x,x,hammer.y,y), true_angle);
+                            y = hammer.y + lengthdir_y(point_distance(hammer.x,x,hammer.y,y), true_angle);
+                            image_angle = hammer.image_angle;
+                        }
+                    }
+                        /*rotate_x = 100;
+                        rotate_y = 500;
+                        angle_rate = -5;
+                        distance = point_distance(x, rotate_x, y, rotate_y);
+                        x = rotate_x + lengthdir_x(distance,angle_rate);
+                        y = rotate_y + lengthdir_y(distance,angle_rate);*/
                 }
             break; 
         case 8:
+            with(hammer) { 
+                image_angle = image_angle - 10;
+                move_towards_point(x + 400, y - 300, 7);
+            }
+            the_angle = hammer.image_angle;
+            true_angle = angle + the_angle;
+            left_text_start.true_angle = true_angle;
+            left_text_start.hammer = hammer;
+            with (left_text_start) {    
+                x = hammer.x + lengthdir_x(point_distance(hammer.x,x,hammer.y,y), true_angle);
+                y = hammer.y + lengthdir_y(point_distance(hammer.x,x,hammer.y,y), true_angle);
+                image_angle = hammer.image_angle;
+            }
+            
+            if collision_point(right_box.x, right_box.y, hammer, true, true)
+            {
+                left_text_start.speed = 0;
+                hammer.speed = 0;
+                fight_step++;
+            }
+            break;
+        case 9:
             break;
         default: fight_step = 0;
             start_battle = 0;
@@ -164,6 +207,14 @@ if start_battle = 0 {
     right_box = instance_create(obj_right_guy.x - 375,
                                 obj_right_guy.y - 325, 
                                 obj_basic_bubble);
+                                
+    left_text_start = instance_create(left_box.x + padding,
+                                      left_box.y + padding,
+                                      obj_left_text_location);
+                                      
+    right_text_start = instance_create(right_box.x + padding,
+                                      right_box.y + padding,
+                                      obj_right_text_location);
     start_battle = 1;
     alarm[0] = 1;
     fight_step = 0;
@@ -196,7 +247,8 @@ else {
             <kind>1</kind>
             <string>/// Start Dialogue Battle
 
-if start_battle = 0 { 
+
+if start_battle = 0 {
     left_box = instance_create(obj_left_guy.x + 100,
                                obj_left_guy.y - 325, 
                                obj_basic_bubble);
@@ -205,6 +257,14 @@ if start_battle = 0 {
     right_box = instance_create(obj_right_guy.x - 375,
                                 obj_right_guy.y - 325, 
                                 obj_basic_bubble);
+                                
+    left_text_start = instance_create(left_box.x + padding,
+                                      left_box.y + padding,
+                                      obj_left_text_location);
+                                      
+    right_text_start = instance_create(right_box.x + padding,
+                                      right_box.y + padding,
+                                      obj_right_text_location);
     start_battle = 1;
     alarm[0] = 1;
     fight_step = 0;
@@ -237,12 +297,11 @@ else {
             <kind>1</kind>
             <string>/// Draw Text
 
-if start_battle = 1 {
-    draw_text_ext(left_box.x + padding, left_box.y + padding, 
-                    left_text, 45, 350);
+if start_battle == 1 {
+    draw_text_ext_transformed(left_text_start.x, left_text_start.y, left_text, 45, 350, 1, 1, the_angle);
                     
-    draw_text_ext(right_box.x + padding, right_box.y + padding, 
-                    right_text, 45, 350);
+    draw_text_ext(right_text_start.x, right_text_start.y, 
+                    right_text, 45, 350);                   
 }
 </string>
           </argument>
