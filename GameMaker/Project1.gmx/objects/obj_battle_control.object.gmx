@@ -35,6 +35,7 @@ padding = 7.24;
 reverse = false;
 the_angle = 0;
 first_time = 1;
+return_pos = false;
 </string>
           </argument>
         </arguments>
@@ -57,7 +58,7 @@ first_time = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw different text strings on different events
+            <string>    /// Draw different text strings on different events
 
 padding = 5
 draw_set_font(font1);
@@ -105,35 +106,49 @@ if start_battle = 1 {
                 with (handle) instance_destroy();
                 with (mallet_left) instance_destroy();
                 with (mallet_right) instance_destroy();
+                hammer_posx = hammer.x;
+                hammer_posy = hammer.y;
+                length = sqrt(sqr(hammer.x-left_text_start.x)+sqr(hammer.y-left_text_start.y));
+                between_angle = point_direction(hammer.x,left_text_start.x,hammer.y,left_text_start.y);
+                temp_angle = between_angle;
                 fight_step++;       
                 break;  
         case 7: if (mouse_check_button(mb_right)) {
-                    if (hammer.image_angle &gt; 30)
-                        fight_step++;
-                    else {
-                        hammer.image_angle = hammer.image_angle + 1;
-                        the_angle = hammer.image_angle;
-                        if first_time {
-                            angle = point_direction(hammer.x,left_text_start.x,hammer.y,left_text_start.y) + the_angle;
-                            true_angle = angle;
-                            first_time = 0;
-                        }
-                        else 
-                            true_angle = angle + the_angle;
-                        left_text_start.true_angle = true_angle;
-                        left_text_start.hammer = hammer;
-                        with (left_text_start) {    
-                            x = hammer.x + lengthdir_x(point_distance(hammer.x,x,hammer.y,y), true_angle);
-                            y = hammer.y + lengthdir_y(point_distance(hammer.x,x,hammer.y,y), true_angle);
-                            image_angle = hammer.image_angle;
+                    if (hammer.image_angle &gt; 50)
+                        return_pos = true;
+                    else if (hammer.image_angle &lt; 50 &amp;&amp; hammer.image_angle &gt; 47)
+                        hammer.image_alpha = 0.5;
+                    else if (hammer.image_angle &gt; 40) 
+                        rotation_speed = 0.4;
+                    else if (hammer.image_angle &gt; 30) 
+                        rotation_speed = 0.6
+                    else if (hammer.image_angle &gt; 20) 
+                        rotation_speed = 0.8
+                    else 
+                        rotation_speed = 1; 
+                    
+                    hammer.image_angle = hammer.image_angle + rotation_speed;
+                    the_angle += rotation_speed;
+                    temp_angle += rotation_speed;
+                }
+                else {
+                    if hammer.image_angle &gt; 0 {
+                        if (hammer.image_angle &gt; 50 || hammer.image_angle &lt; 47)
+                            return_pos = true;
+                        else {
+                            fight_step++;
+                            hammer.image_alpha = 1;
                         }
                     }
-                        /*rotate_x = 100;
-                        rotate_y = 500;
-                        angle_rate = -5;
-                        distance = point_distance(x, rotate_x, y, rotate_y);
-                        x = rotate_x + lengthdir_x(distance,angle_rate);
-                        y = rotate_y + lengthdir_y(distance,angle_rate);*/
+                }
+                left_text_start.x = hammer.x + lengthdir_x(length, temp_angle);
+                left_text_start.y = hammer.y + lengthdir_y(length, temp_angle);
+                if return_pos {
+                    hammer.image_angle = 0;
+                    hammer.image_alpha = 1;
+                    the_angle = 0;
+                    temp_angle = between_angle;
+                    return_pos = false; 
                 }
             break; 
         case 8:
@@ -141,15 +156,11 @@ if start_battle = 1 {
                 image_angle = image_angle - 10;
                 move_towards_point(x + 400, y - 300, 7);
             }
-            the_angle = hammer.image_angle;
-            true_angle = angle + the_angle;
-            left_text_start.true_angle = true_angle;
-            left_text_start.hammer = hammer;
-            with (left_text_start) {    
-                x = hammer.x + lengthdir_x(point_distance(hammer.x,x,hammer.y,y), true_angle);
-                y = hammer.y + lengthdir_y(point_distance(hammer.x,x,hammer.y,y), true_angle);
-                image_angle = hammer.image_angle;
-            }
+            the_angle -= 10;
+            temp_angle -= 10;
+            
+            left_text_start.x = hammer.x + lengthdir_x(length, temp_angle);
+            left_text_start.y = hammer.y + lengthdir_y(length, temp_angle);
             
             if collision_point(right_box.x, right_box.y, hammer, true, true)
             {
