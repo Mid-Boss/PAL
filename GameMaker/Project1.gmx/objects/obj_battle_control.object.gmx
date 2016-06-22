@@ -36,6 +36,9 @@ reverse = false;
 the_angle = 0;
 first_time = 1;
 return_pos = false;
+left_yscale = 1;
+left_xscale = 1;
+call_ugh = false;
 </string>
           </argument>
         </arguments>
@@ -87,7 +90,11 @@ if start_battle = 1 {
                 fight_step++;
                 break;
         // Make sides of hammers
-        case 5: if handle.speed == 0 {
+        case 5: if left_yscale&lt;2 
+                    left_yscale += .05;
+                if left_xscale&lt;1.3 
+                    left_xscale += .015;
+                if handle.speed == 0 and left_yscale == 2{
                     mallet_left = instance_create(left_box.x,
                         left_box.y, obj_hammer_side);
                     mallet_left.image_xscale = -1;
@@ -100,8 +107,13 @@ if start_battle = 1 {
                     fight_step++;
                 }    
                 break;
-        case 6:
+        case 6: if handle.speed != 0 {
+                    fight_step--;
+                    break;
+                }
                 hammer = instance_create(handle.x,handle.y+20,obj_hammer);
+                left_origin_x = handle.x;
+                left_origin_y = handle.y+20;
                 instance_deactivate_object(left_box);
                 with (handle) instance_destroy();
                 with (mallet_left) instance_destroy();
@@ -113,7 +125,11 @@ if start_battle = 1 {
                 temp_angle = between_angle;
                 fight_step++;       
                 break;  
-        case 7: if (mouse_check_button(mb_right)) {
+        case 7: if left_yscale&gt;1 
+                    left_yscale -= .075;
+                if left_xscale&gt;1 
+                    left_xscale -= .025;
+                if (mouse_check_button(mb_right)) {
                     if (hammer.image_angle &gt; 50)
                         return_pos = true;
                     else if (hammer.image_angle &lt; 50 &amp;&amp; hammer.image_angle &gt; 47)
@@ -170,11 +186,26 @@ if start_battle = 1 {
             }
             break;
         case 9:
+            call_ugh = true;
+            break;
+        case 10:
+            break;
+        case 11:
+            call_ugh = false;
+            the_angle = 0;
+            left_text_start.x = left_text_origin_x;
+            left_text_start.y = left_text_origin_y;
+            hammer.x = left_origin_x;
+            hammer.y = left_origin_y;
+            hammer.image_angle = 0;
             break;
         default: fight_step = 0;
             start_battle = 0;
             right_text = "";
             left_text = "";
+            left_yscale = 1;
+            // Should have a initialization script we should call here
+            with (hammer) instance_destroy();
             with (left_box) instance_destroy();
             with (right_box) instance_destroy();
             with (handle) instance_destroy();
@@ -269,8 +300,10 @@ if start_battle = 0 {
                                 obj_right_guy.y - 325, 
                                 obj_basic_bubble);
                                 
-    left_text_start = instance_create(left_box.x + padding,
-                                      left_box.y + padding,
+    left_text_origin_x = left_box.x + padding;
+    left_text_origin_y = left_box.y + padding;
+    left_text_start = instance_create(left_text_origin_x,
+                                      left_text_origin_y,
                                       obj_left_text_location);
                                       
     right_text_start = instance_create(right_box.x + padding,
@@ -309,10 +342,16 @@ else {
             <string>/// Draw Text
 
 if start_battle == 1 {
-    draw_text_ext_transformed(left_text_start.x, left_text_start.y, left_text, 45, 350, 1, 1, the_angle);
-                    
-    draw_text_ext(right_text_start.x, right_text_start.y, 
-                    right_text, 45, 350);                   
+    draw_text_ext_transformed(left_text_start.x, left_text_start.y, left_text, 45, 350, left_xscale, left_yscale, the_angle);
+         
+    if call_ugh {
+        //script_execute(scr_linear_text_change, "uuUUGGHH.....",right_text_start.x,right_text_start.y,-.05, -.06, 350);
+        script_execute(scr_linear_text_change, "uuuuuUUGggggGHHalexsucksdick",right_text_start.x,right_text_start.y,-.02, -.02, 350);
+    }  
+    else {         
+        draw_text_ext(right_text_start.x, right_text_start.y, 
+                    right_text, 45, 350);          
+    }         
 }
 </string>
           </argument>
