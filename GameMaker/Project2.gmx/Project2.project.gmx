@@ -25,6 +25,7 @@
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_opening</sprite>
     <sprite>sprites\spr_heart</sprite>
+    <sprite>sprites\spr_dia_bubble</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bk_invest</background>
@@ -33,6 +34,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_clue_click.gml</script>
+    <script>scripts\scr_run_dialogue.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font1</font>
@@ -64,6 +66,7 @@
       <object>objects\obj_opening</object>
       <object>objects\obj_heart</object>
       <object>objects\obj_shake_screen</object>
+      <object>objects\obj_dialogue_box</object>
     </objects>
     <objects name="globals">
       <object>objects\obj_globals</object>

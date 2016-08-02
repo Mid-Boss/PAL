@@ -114,7 +114,7 @@ step = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_block">
+    <event eventtype="4" ename="obj_opening">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -132,12 +132,14 @@ step = false;
           <argument>
             <kind>1</kind>
             <string>///Reset the Rapier
-opening_check = place_meeting(x+5,y,obj_opening);
-if (opening_check == true) {
-x = start_x;
+//opening_check = place_meeting(x+5,y,obj_opening);
+//if (opening_check == true) {
+scr_run_dialogue('HAHA! My disposition is solid! Good luck breaking through my thick alibi!', 
+                 font_large, 
+                 'right');
+                 
 step = false;
-global.rapier_attack = false;
-}
+//}
 </string>
           </argument>
         </arguments>
