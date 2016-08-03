@@ -26,6 +26,8 @@
     <sprite>sprites\spr_opening</sprite>
     <sprite>sprites\spr_heart</sprite>
     <sprite>sprites\spr_dia_bubble</sprite>
+    <sprite>sprites\spr_clue_button</sprite>
+    <sprite>sprites\spr_clue_menu_bg</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bk_invest</background>
@@ -35,6 +37,12 @@
   <scripts name="scripts">
     <script>scripts\scr_clue_click.gml</script>
     <script>scripts\scr_run_dialogue.gml</script>
+    <script>scripts\scr_settings.gml</script>
+    <script>scripts\scr_clue_menu.gml</script>
+    <scripts name="Helper_Scripts">
+      <script>scripts\scr_click_stall.gml</script>
+      <script>scripts\scr_close_all_dialog.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font1</font>
@@ -71,6 +79,12 @@
     <objects name="globals">
       <object>objects\obj_globals</object>
       <object>objects\obj_clicked_object</object>
+    </objects>
+    <objects name="UI">
+      <object>objects\obj_clue_button</object>
+      <objects name="Clue_Menu">
+        <object>objects\obj_clue_menu_bg</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

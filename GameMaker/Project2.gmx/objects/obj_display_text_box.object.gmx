@@ -69,6 +69,7 @@ t_pad = 10;
     //global.clue_box = false;
 //}
 
+if (global.click_off == true) exit;
 scr_clue_click();
 </string>
           </argument>

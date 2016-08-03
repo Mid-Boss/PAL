@@ -99,7 +99,8 @@ alarm[0] = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_clue_click();
+            <string>if (global.click_off == true) exit;
+scr_clue_click();
 </string>
           </argument>
         </arguments>

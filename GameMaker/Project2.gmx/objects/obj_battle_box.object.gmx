@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-20</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_clicked_object</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//speed array
+event_inherited();
 spd[0] = 1;
 spd[1] = 1;
 spd[2] = 1;
@@ -54,7 +55,8 @@ text = "START BATTLE!";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//gap between defenses
+            <string>if (global.click_off == true) exit;
+//gap between defenses
 var gap = 10+sprite_get_width(spr_block);
 //difference between opening and block
 var dif = sprite_get_height(spr_block)-sprite_get_height(spr_opening);

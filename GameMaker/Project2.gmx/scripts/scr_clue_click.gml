@@ -1,24 +1,24 @@
 ///scr_clue_click();
+//Simple click stall check at the beginning
+if (click_stall == true) exit;
 
-if (global.clue_box == false && click_stall == false)
+//No dialog box open:
+if (global.clue_box == false)
 {
+    //Check to see if the text would go off screen to the right then:
+    //Left
     if (x+id.sprite_width+boxwidth > room_width)
         the_object = instance_create(x-boxwidth,y,obj_display_text_box);
+    //Right
     else
         the_object = instance_create(x+id.sprite_width,y,obj_display_text_box);
     
     the_object.text = id.text;
     the_object.color = id.color;
-
-    click_stall = true;
+    //Dialogue box is up
     global.clue_box = true;
-} else if (global.clue_box == true && click_stall == false) {
-    if instance_exists(obj_display_text_box){
-        global.clue_box = false;
-            with (obj_display_text_box){
-            instance_destroy();
-        }
-    }
+//Dialog box is open
+} else if (global.clue_box == true) {
+scr_close_all_dialog();
 }
-alarm[8] = room_speed/4;
-
+scr_click_stall();

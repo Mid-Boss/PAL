@@ -28,6 +28,7 @@
             <string>global.clue_box = false;
 global.clue_alarm = 0;
 global.rapier_attack = false;
+global.click_off = false;
 </string>
           </argument>
         </arguments>
