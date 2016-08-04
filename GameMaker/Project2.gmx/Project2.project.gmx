@@ -32,6 +32,8 @@
     <sprite>sprites\spr_id</sprite>
     <sprite>sprites\spr_dialog</sprite>
     <sprite>sprites\spr_docs</sprite>
+    <sprite>sprites\spr_tablet</sprite>
+    <sprite>sprites\spr_palpad_screen</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bk_invest</background>
@@ -92,6 +94,8 @@
         <object>objects\obj_profiles</object>
         <object>objects\obj_dialogs</object>
         <object>objects\obj_case_files</object>
+        <object>objects\obj_palpad_screen</object>
+        <object>objects\obj_tablet</object>
       </objects>
     </objects>
   </objects>

@@ -34,6 +34,8 @@ profiles = instance_create(room_width/2 + wid, room_height/2 + high, obj_profile
 dialogs = instance_create(room_width/2 + wid, room_height/2 - high, obj_dialogs);
 files = instance_create(room_width/2 - wid, room_height/2 + high, obj_case_files);
 clues = instance_create(room_width/2 - wid, room_height/2 - high, obj_clues);
+tablet = instance_create(room_width/2, room_height/2, obj_tablet);
+screen = instance_create(room_width/2, room_height/2, obj_palpad_screen);
 </string>
           </argument>
         </arguments>
@@ -64,6 +66,8 @@ with (profiles) instance_destroy();
 with (dialogs) instance_destroy();
 with (files) instance_destroy();
 with (clues) instance_destroy();
+with (tablet) instance_destroy();
+with (screen) instance_destroy();
 </string>
           </argument>
         </arguments>
