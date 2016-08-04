@@ -28,6 +28,12 @@
             <string>///Create the full menu
 
 global.click_off = true;
+var wid = sprite_get_width(spr_clue_menu_bg)/2 - 128;
+var high = sprite_get_height(spr_clue_menu_bg)/2 - 128;
+profiles = instance_create(room_width/2 + wid, room_height/2 + high, obj_profiles);
+dialogs = instance_create(room_width/2 + wid, room_height/2 - high, obj_dialogs);
+files = instance_create(room_width/2 - wid, room_height/2 + high, obj_case_files);
+clues = instance_create(room_width/2 - wid, room_height/2 - high, obj_clues);
 </string>
           </argument>
         </arguments>
@@ -53,6 +59,11 @@ global.click_off = true;
             <string>///Delete all the menu objects
 
 global.click_off = false;
+scr_click_stall();
+with (profiles) instance_destroy();
+with (dialogs) instance_destroy();
+with (files) instance_destroy();
+with (clues) instance_destroy();
 </string>
           </argument>
         </arguments>

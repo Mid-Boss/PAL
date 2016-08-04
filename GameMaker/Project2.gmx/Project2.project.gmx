@@ -28,6 +28,10 @@
     <sprite>sprites\spr_dia_bubble</sprite>
     <sprite>sprites\spr_clue_button</sprite>
     <sprite>sprites\spr_clue_menu_bg</sprite>
+    <sprite>sprites\spr_eye</sprite>
+    <sprite>sprites\spr_id</sprite>
+    <sprite>sprites\spr_dialog</sprite>
+    <sprite>sprites\spr_docs</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bk_invest</background>
@@ -84,6 +88,10 @@
       <object>objects\obj_clue_button</object>
       <objects name="Clue_Menu">
         <object>objects\obj_clue_menu_bg</object>
+        <object>objects\obj_clues</object>
+        <object>objects\obj_profiles</object>
+        <object>objects\obj_dialogs</object>
+        <object>objects\obj_case_files</object>
       </objects>
     </objects>
   </objects>
