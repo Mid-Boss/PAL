@@ -68,35 +68,35 @@ clue_mettaton.sprite_index = spr_clue_mettaton;
 
 with clue_chair
 {
-    text = "Just needs some duct tape.";
+    text = scr_clue_text(1,"living_room",1,"chair");
     glow = c_green;
     color = c_green;
 }
 
 with clue_obama
 {
-    text = "CHANGE...anybody got some spare change? Please?";
+    text = scr_clue_text(1,"living_room",1,"obama");
     glow = c_red;
     color = c_green;
 }   
 
 with clue_gir
 {
-    text = "Derp.";
+    text = scr_clue_text(1,"living_room",1,"gir");
     glow = c_yellow;
     color = c_green;
 }    
 
 with clue_dog
 {
-    text = "Much WOW! So TASTE!";
+    text = scr_clue_text(1,"living_room",1,"dog");
     glow = c_blue;
     color = c_green;
 }    
 
 with clue_mettaton
 {
-    text = "BUH BUH BABA BUH-BADA BUH BUH!!";
+    text = scr_clue_text(1,"living_room",1,"mettaton");
     glow = c_black;
     color = c_green;
 }     
