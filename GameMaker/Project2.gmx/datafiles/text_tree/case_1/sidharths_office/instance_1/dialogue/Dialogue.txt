@@ -1,0 +1,50 @@
+snd_knock
+*Sidharth* It's open.
+snd_door_open
+*Vicky* Is this the right place?
+*Sidharth* Been asking myself that for years.
+*Vicky* Are you the detective?
+*Sidharth* That's what I call myself, sure.  Have a seat.
+snd_chair_scoot
+snd_door_close
+*Sidharth* Some tea?  Something stiffer?  You look a little out of sorts.
+*Vicky* Tea will be fine, thank you.  I've never done this before, I don't know where to start.
+snd_boil
+*Sidharth* Why don't we start with your name and occupation?
+*Vicky* Vicky Yanwei, Senior Solvent Solver for Strong Sound Solutions, LLC.
+snd_card
+*Sidharth* Alright, Vicky.  As you might have seen on the door, I'm Sidharth.  Sole detective of my little closet office.
+snd_ding
+*Sidharth* So what brings you here?
+snd_pour
+snd_pour
+*Vicky* Late night I returned home to discover that my house had been broken into and an... item of great personal value had been stolen.
+snd_sip
+*Sidharth* Nothing else was missing?
+*Vicky* No.  I checked the house twice over and nothing else had been removed.
+*Sidharth* Odd.  What did the police say?
+snd_female_scoff
+*Vicky* 'Buy a bigger dog.'
+*Sidharth* I suspected as much.  Most of these minor burglary cases go unsolved.
+snd_sip
+*Sidharth* Even by me, mind you.
+*Vicky* I'm aware, detective, and my husband said the same thing.  But as this is a precious heirloom from my nana, I would be remiss for any lack of effort in its recovery.
+*Sidharth* It's your money, just thought I'd warn you.  I'm happy to try regardless.  Perhaps you'd better show me just what it is I'm supposed to be looking for.
+*Vicky* ...
+snd_card
+spr_photo
+*Sidharth* This is...
+*Vicky* A one-of-a-kind, solid-gold bust of the 44th president of the United States.  My dear nana won it in a raffle at one of his election rallies and treasured it until her dying day.  On her deathbed, she made me swear to display it proudly and protect it against vengeful McCain supporters.
+snd_sip
+*Vicky* Of course the whole affair is the absurd aftermath of nana's chronic dementia, but if it keeps her crazy spirit at rest, why not?  I made a promise, I intend to keep it.
+*Sidharth* This thing is solid-gold?  It must weigh a ton!
+*Vicky* Of course.
+snd_sip
+*Sidharth* And someone just broke in and made off with it.
+*Vicky* Yes, that's why I'm here.
+snd_sip
+*Sidharth* ...
+snd_sip
+snd_sip
+*Vicky* What happens next?
+*Sidharth* I think I'd better see the crime scene.
