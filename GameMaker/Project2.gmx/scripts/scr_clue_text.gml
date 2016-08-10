@@ -17,7 +17,9 @@ while (!file_text_eof(fid))
     if the_header == clue
     {
         the_string = file_text_read_string(fid);
+        file_text_close(fid);
         return the_string;
     }
+    file_text_readln(fid);
     file_text_readln(fid);
 }
