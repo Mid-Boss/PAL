@@ -23,3 +23,4 @@ while (!file_text_eof(fid))
     file_text_readln(fid);
     file_text_readln(fid);
 }
+file_text_close(fid);

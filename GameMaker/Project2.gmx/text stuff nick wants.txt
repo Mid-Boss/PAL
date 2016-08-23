@@ -1,0 +1,27 @@
+Dialogue
+Display dialogue (Sprite)
+Pause
+*Dialouge effects
+*non-dialogue text
+Set first-time only and second-time-on dialogue trees
+*vary dialogue based on previous variables
+*set variables for future events
+
+Sprites
+Call bust (basic)
+*Call bust (with conditions)
+Dismiss bust (basic)
+*Dismiss bust (with conditions)
+*Move bust
+Change bust (expression, pose, gestures)
+*Call non-bust sprites
+*set depth
+
+Sounds
+Play a sound (pause function should be able to provide gaps here)
+Clues
+Change variables that affect investigation scenes
+*Add or change clues
+*Add dialogue options based on clues
+Rooms
+*Move rooms

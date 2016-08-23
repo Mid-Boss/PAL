@@ -634,9 +634,10 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="2">
+    <constants number="3">
       <constant name="BATTLE">0</constant>
       <constant name="INVEST">1</constant>
+      <constant name="DIALOG">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

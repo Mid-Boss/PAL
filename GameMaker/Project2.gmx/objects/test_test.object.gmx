@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_clicked_object</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,15 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-t_pad = 5;
-destination = noone;
+            <string>alarm[0] = 1;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,57 +48,7 @@ destination = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.click_off == true) exit;
-switch (destination) {
-    case (BATTLE):
-        room_goto (rm_battle);
-        break;
-    case (INVEST):
-        room_goto (rm_investigation);
-        break;
-    case (DIALOG):
-        room_goto (rm_sidharth_office);
-        break;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>500</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring>draw_self();</codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>draw_set_font(papyrus);
-
-draw_text(x+t_pad, y+t_pad, text);
+            <string>scr_dialogue_text();
 </string>
           </argument>
         </arguments>

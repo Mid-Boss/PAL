@@ -34,6 +34,9 @@ invest.sprite_index = spr_trans_box;
 
 battle = instance_create(200,400,obj_transport_box);
 battle.sprite_index = spr_trans_box;
+
+dialog = instance_create(200,600,obj_transport_box);
+dialog.sprite_index = spr_trans_box;
 </string>
           </argument>
         </arguments>
@@ -69,6 +72,12 @@ with battle
 {
     text = "Battle Scene";
     destination = BATTLE;
+}
+
+with dialog
+{
+    text = "Dialogue Scene"
+    destination = DIALOG;
 }
 </string>
           </argument>

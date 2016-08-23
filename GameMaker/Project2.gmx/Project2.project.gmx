@@ -3,12 +3,12 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafiles number="3" name="text_tree">
-      <datafiles number="3" name="case_1">
-        <datafiles number="3" name="bar">
-          <datafiles number="3" name="instance_1">
-            <datafiles number="3" name="dialogue">
+  <datafiles number="4" name="datafiles">
+    <datafiles number="4" name="text_tree">
+      <datafiles number="4" name="case_1">
+        <datafiles number="4" name="bar">
+          <datafiles number="4" name="instance_1">
+            <datafiles number="4" name="dialogue">
               <datafile>
                 <name>Dialogue.txt</name>
                 <exists>-1</exists>
@@ -29,9 +29,9 @@
             </datafiles>
           </datafiles>
         </datafiles>
-        <datafiles number="3" name="living_room">
-          <datafiles number="3" name="instance_1">
-            <datafiles number="3" name="clues">
+        <datafiles number="4" name="living_room">
+          <datafiles number="4" name="instance_1">
+            <datafiles number="4" name="clues">
               <datafile>
                 <name>Clues.txt</name>
                 <exists>-1</exists>
@@ -52,8 +52,28 @@
             </datafiles>
           </datafiles>
         </datafiles>
-        <datafiles number="3" name="office">
-          <datafiles number="3" name="instance_1"/>
+        <datafiles number="4" name="sidharth_office">
+          <datafiles number="4" name="instance_1">
+            <datafiles number="4" name="dialogue">
+              <datafile>
+                <name>Dialogue.txt</name>
+                <exists>-1</exists>
+                <size>2463</size>
+                <exportAction>2</exportAction>
+                <exportDir></exportDir>
+                <overwrite>0</overwrite>
+                <freeData>-1</freeData>
+                <removeEnd>0</removeEnd>
+                <store>0</store>
+                <ConfigOptions>
+                  <Config name="Default">
+                    <CopyToMask>9223372036854775807</CopyToMask>
+                  </Config>
+                </ConfigOptions>
+                <filename>Dialogue.txt</filename>
+              </datafile>
+            </datafiles>
+          </datafiles>
         </datafiles>
       </datafiles>
     </datafiles>
@@ -105,6 +125,8 @@
       <script>scripts\scr_close_all_dialog.gml</script>
     </scripts>
     <script>scripts\scr_clue_text.gml</script>
+    <script>scripts\scr_dialogue_text.gml</script>
+    <script>scripts\scr_dialogue_reader.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font1</font>
@@ -154,9 +176,11 @@
         <object>objects\obj_tablet</object>
       </objects>
     </objects>
+    <object>objects\test_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_transistion</room>
+    <room>rooms\rm_sidharth_office</room>
     <room>rooms\rm_investigation</room>
     <room>rooms\rm_battle</room>
   </rooms>
