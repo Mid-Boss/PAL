@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_dialogue_text();
+            <string>scr_dialogue_text_file();
 </string>
           </argument>
         </arguments>

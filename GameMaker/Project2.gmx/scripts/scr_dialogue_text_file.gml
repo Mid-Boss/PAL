@@ -1,4 +1,4 @@
-///scr_dialogue()
+///scr_dialogue_text_file()
 
 var master_array;
 count = 0;
@@ -10,7 +10,8 @@ fid = file_text_open_read(filename);
 while (!file_text_eof(fid))
 {
     master_array[count] = file_text_read_string(fid);
+    file_text_readln(fid);
     count++;
 }
 
-scr_dialogue_reader(master_array);
+scr_dialogue_parser(master_array);

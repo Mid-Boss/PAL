@@ -125,8 +125,9 @@
       <script>scripts\scr_close_all_dialog.gml</script>
     </scripts>
     <script>scripts\scr_clue_text.gml</script>
-    <script>scripts\scr_dialogue_text.gml</script>
-    <script>scripts\scr_dialogue_reader.gml</script>
+    <script>scripts\scr_dialogue_text_file.gml</script>
+    <script>scripts\scr_dialogue_parser.gml</script>
+    <script>scripts\scr_add_bust.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font1</font>
